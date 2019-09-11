@@ -7,7 +7,7 @@ import requests
 from damodules import daloadim
 from io import BytesIO
 
-model = load_model('/Users/mehmet/deepappsworks/basic_classification/dogcat_model_bak.h5')
+model = load_model('dogcat_model_bak.h5')
 imgOriginal = daloadim.loadImage()
 img1 = imgOriginal.resize((64, 64), Image.ANTIALIAS)
 
