@@ -2,19 +2,22 @@ import requests
 from PIL import Image
 from io import BytesIO
 def loadImage():
-	BASE_URL = "http://localhost:8080/getCurrentImageUrl/"
-
-	applicationId = "catDog"
-	# api-endpoint 
-	URL = BASE_URL + applicationId
-
-
-	# sending get request and saving the response as response object 
-	r = requests.get(url = URL) 
-	data = r.text
-	print("Response : " + data) 
-	response = requests.get(data)
-	img = Image.open(BytesIO(response.content))
+	testApp = true;
+	if(testApp){
+		img = Image.open("/opt/deepapp/work/dog.jpeg")
+	}else{
+		BASE_URL = "http://localhost:8080/getCurrentImageUrl/"
+		applicationId = "catDog"
+		# api-endpoint 
+		URL = BASE_URL + applicationId
+		# sending get request and saving the response as response object 
+		r = requests.get(url = URL) 
+		data = r.text
+		print("Response : " + data) 
+		response = requests.get(data)
+		img = Image.open(BytesIO(response.content))
+	}
+	
 	return img
 def serveImage(changedImage):
 	BASE_URL = "http://localhost:8080/sendCurrentImageUrlToJava/"
@@ -24,7 +27,6 @@ def serveImage(changedImage):
 	applicationId = "catDog"
 	# api-endpoint 
 	URL = BASE_URL + applicationId
-
 
 	# sending get request and saving the response as response object 
 	
