@@ -20,7 +20,7 @@ def loadImage():
 	
 	return img
 def serveImage(changedImage):
-	BASE_URL = "http://localhost:8080/sendCurrentImageUrlToJava/"
+	BASE_URL = "http://10.103.207.95:8080/sendCurrentImageUrlToJava/"
 	image_file = BytesIO()
 	changedImage.save(image_file, "jpeg")
 	image_file.seek(0)
