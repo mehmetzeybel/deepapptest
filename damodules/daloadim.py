@@ -2,7 +2,7 @@ import requests
 from PIL import Image
 from io import BytesIO
 def loadImage():
-	testApp = True;
+	testApp = True
 	if testApp == True:
 		img = Image.open("/opt/deepapp/work/dog.jpeg")
 	else:
@@ -20,8 +20,9 @@ def loadImage():
 	
 	return img
 def serveImage(changedImage):
+	testApp = True
 	if testApp == True:
-		img = Image.open("/opt/deepapp/work/dog.jpeg")
+		plt.imshow(changedImage)
 	else:
 		BASE_URL = "localhost:8080/sendCurrentImageUrlToJava/"
 		image_file = BytesIO()
