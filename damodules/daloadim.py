@@ -1,6 +1,7 @@
 import requests
 from PIL import Image
 from io import BytesIO
+import matplotlib.pyplot as plt
 def loadImage():
 	testApp = True
 	if testApp == True:
